@@ -1,0 +1,5 @@
+kz\tottory\app_user\impl\UserService.class
+kz\tottory\app_user\AppUserApplication.class
+kz\tottory\app_user\impl\UserController.class
+kz\tottory\app_user\impl\UserRepo.class
+kz\tottory\app_user\impl\User.class
