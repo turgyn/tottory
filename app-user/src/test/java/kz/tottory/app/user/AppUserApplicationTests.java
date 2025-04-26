@@ -1,4 +1,4 @@
-package kz.tottory.app_user;
+package kz.tottory.app.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
