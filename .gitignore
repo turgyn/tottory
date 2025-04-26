@@ -1,0 +1,27 @@
+# Ignore Maven build output
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignore IntelliJ IDEA settings
+.idea/
+*.iml
+
+# Ignore logs and dump files
+*.log
+*.dumpstream
+
+# Ignore Maven generated sources
+/generated-sources/
+/generated-test-sources/
+/maven-status/
+/surefire-reports/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java temporary files
+*.class
+
+# Optional: if you ever have Docker overrides
+# docker-compose.override.yml
