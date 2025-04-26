@@ -45,7 +45,7 @@ public class LoggingFilter extends OncePerRequestFilter {
 
         String requestBody = new String(request.getContentAsByteArray(), StandardCharsets.UTF_8);
 
-        log.info("[REQUEST] {} {} Headers=[{}] Body=[{}]",
+        log.info("[REQUEST] {} {} Headers=[{}] Body={}",
                 request.getMethod(), request.getRequestURI(), headers, removeLineBreaks(requestBody));
     }
 

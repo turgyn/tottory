@@ -22,8 +22,8 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     private final ObjectMapper objectMapper;
-//    @Value("${spring.profile.active}")
-//    private String profile;
+    @Value("${spring.profiles.active:default}")
+    private String activeProfile;
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleAllExceptions(Exception ex) {
@@ -51,8 +51,8 @@ public class GlobalExceptionHandler {
             log.error("[RESPONSE][EXCEPTION] Unable to parse body. StackTrace={}", ex.getMessage(), jpe);
         }
 
-//        log.error(profile);
-//        if (!profile.equals("prod"))
+        log.error(activeProfile);
+        if (!activeProfile.equals("prod"))
             body.put("trace", getStackTraceAsString(ex));
 
         return ResponseEntity.status(status).body(body);
@@ -63,6 +63,11 @@ public class GlobalExceptionHandler {
         for (StackTraceElement element : throwable.getStackTrace()) {
             sb.append(element.toString()).append("\n");
         }
-        return sb.toString();
+        String trace = sb.toString();
+        // Ограничить длину
+        if (trace.length() > 2000) {
+            trace = trace.substring(0, 2000) + "... (truncated)";
+        }
+        return trace;
     }
 }
