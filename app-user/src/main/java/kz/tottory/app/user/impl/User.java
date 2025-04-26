@@ -1,4 +1,4 @@
-package kz.tottory.app_user.impl;
+package kz.tottory.app.user.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

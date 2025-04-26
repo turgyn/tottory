@@ -1,7 +1,9 @@
-package kz.tottory.app_user.impl;
+package kz.tottory.app.user.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -24,7 +26,9 @@ public class UserController {
 
     @PostMapping
     public User create(@RequestBody User user) {
-        return service.create(user);
+//        return service.create(user);
+//        throw new RuntimeException("some error");
+        throw new ResponseStatusException(HttpStatus.PAYMENT_REQUIRED, "hello");
     }
 
 }

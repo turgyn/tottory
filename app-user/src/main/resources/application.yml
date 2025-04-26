@@ -1,3 +1,9 @@
 spring:
   application.name: app-user
   main.banner-mode: off
+
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    kz.tottory.app_user: debug

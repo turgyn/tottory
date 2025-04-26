@@ -9,6 +9,7 @@
 
     <modules>
         <module>app-user</module>
+        <module>lib-web-infra</module>
         <!-- потом добавим другие модули -->
     </modules>
 
