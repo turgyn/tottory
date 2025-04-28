@@ -1,6 +1,7 @@
 package kz.tottory.app.user.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/users")
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
 
     private final UserService service;

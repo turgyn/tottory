@@ -26,10 +26,11 @@ public class WebInfoConfiguration {
         return new GlobalExceptionHandler(objectMapper);
     }
 
-    @Bean
-    public TracingFilter tracingFilter() { // tracingFilter have to be registered before loggingFilter
-        return new TracingFilter();
-    }
+//    not needed anymore, replaced by micrometer tracing
+//    @Bean
+//    public TracingFilter tracingFilter() { // tracingFilter have to be registered before loggingFilter
+//        return new TracingFilter();
+//    }
 
     @Bean
     public LoggingFilter loggingFilter() {

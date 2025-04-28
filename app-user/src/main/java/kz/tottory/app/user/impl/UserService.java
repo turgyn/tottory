@@ -18,7 +18,9 @@ public class UserService {
     }
 
     public User findById(Long id) {
-        return repo.findById(id).get();
+        var user = repo.findById(id).get();
+        log.info("sending user {}", user);
+        return user;
     }
 
     public User create(User user) {

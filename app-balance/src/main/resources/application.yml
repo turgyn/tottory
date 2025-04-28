@@ -1,6 +1,9 @@
 spring:
-  application.name: app-user
+  application.name: app-balance
   main.banner-mode: off
+
+server:
+  port: 8081
 
 logging:
   level:
@@ -9,6 +12,7 @@ logging:
     kz.tottory.app.user: debug
   pattern:
     correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+#  pattern:
 #    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr([%thread]){cyan} %highlight(%-5level ) %clr([%X{traceId}]){magenta} %clr(%-40.40logger){purple} : %highlight(%msg%n )"
 #    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
@@ -16,3 +20,5 @@ management:
   tracing:
     sampling:
       probability: 1.0
+#    propagation:
+#      type: w3c

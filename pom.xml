@@ -8,8 +8,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>app-user</module>
         <module>lib-web-infra</module>
+        <module>lib-webflux-infra</module>
+        <module>lib-user</module>
+
+        <module>app-user</module>
+        <module>app-balance</module>
         <!-- потом добавим другие модули -->
     </modules>
 
@@ -22,6 +26,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Darkhan Turgyn</name>
+            <email>darustur@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/turgyn/tottory.git</url>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,6 +48,26 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-otel</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <pluginManagement>
@@ -52,6 +87,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
                     <configuration>
                         <excludes>
                             <exclude>

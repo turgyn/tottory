@@ -7,28 +7,25 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>lib-web-infra</artifactId>
-    <name>lib-web-infra</name>
-    <description>Common Logging And Exception Handling for Tottory Microservices</description>
+    <artifactId>lib-webflux-infra</artifactId>
+    <name>lib-webflux-infra</name>
+    <description>Common Logging And Exception Handling for Tottory Microservices for reactive services</description>
+
 
     <dependencies>
-        <!-- Чтобы использовать фильтры, @ControllerAdvice, @Slf4j -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-
-        <dependency> <!-- Fix: Jackson ObjectMapper по умолчанию не умеет работать с Java 8+ датами (LocalDateTime, ZonedDateTime, Instant и т.д.). -->
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
-
-<!--        <dependency>-->
+        <!--        <dependency>-->
 <!--            <groupId>junit</groupId>-->
 <!--            <artifactId>junit</artifactId>-->
 <!--            <version>3.8.1</version>-->
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
     </dependencies>
-
 </project>
